@@ -1,0 +1,405 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: black;
+}
+
+.logo {
+  font-size: 24px;
+  padding: 0 100px 0 120px;
+  color: white;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 30px
+}
+
+.coontent {
+  max-width: 910px;
+}
+
+.profile_photo img {
+  width: 240px;
+  height: 240px;
+  border: solid #a7a3a3;
+  border-radius: 50%;
+  margin: 40px 0 0 100px;
+  user-select: none;
+}
+
+/* .profile_photo :hover {
+  opacity: 0,9;
+} */
+
+/* .back {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #a7a3a3;
+  margin: -246px 0 8px 103px;
+} */
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Helvetica;
+}
+
+#btn_blog {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: #ff66cc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  margin: -200px 0 0 480px;
+  user-select: none;
+}
+
+#btn_blog:hover {
+  background: #FF3399;
+}
+
+#btn_works {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  margin: -200px 0 0 680px;
+  user-select: none;
+}
+
+#btn_works:hover {
+  background: #00CC00;
+}
+
+#btn_contact {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: #33ccff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  margin: -200px 0 0 880px;
+  user-select: none;
+}
+
+#btn_contact:hover {
+  background: #3399FF;
+}
+
+#btn {
+  float: left;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Helvetica;
+  width: 150px;
+  height: 150px;
+  background-color: #FFFF00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  margin: -200px 0 0 1080px;
+  user-select: none;
+}
+
+#btn:hover {
+  background: #FFCC33;
+}
+
+.profile_names {
+  width: 200px;
+  height: 100px;
+  font-size: 12px;
+  font-family: Helvetica;
+  text-align: center;
+  margin-left: 120px
+}
+
+.about_me {
+  background-color: #a7a3a3;
+  padding: 7px 100px 7px 165px;
+  margin-top: -50px
+}
+
+.profile_description {
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 200px 10px 165px;
+  line-height: 30px;
+}
+
+.profile_description_en {
+  width: 700px;
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 30px;
+  margin: -160px 200px 10px 700px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #333333;
+  width: 100%;
+  text-align: center;
+  color: #a7a3a3;
+  padding: 5px 0px;
+  font-size: 10px;
+}
+
+
+/*------------------------------
+  ここから下がハンバーガーメニューに関するCSS
+------------------------------*/
+
+/* チェックボックスは非表示に */
+.drawer-hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  /* 重なり順を一番上に */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+  bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+  top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked~.drawer-open span {
+  background: black;
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked~.drawer-open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer-check:checked~.drawer-open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.drawer-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: #fff;
+  transition: .5s;
+  color: white;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked~.drawer-content {
+  left: 0px;
+  /* メニューを画面に入れる */
+  width: 450px;
+  height: 610px;
+  background-color:#a7a3a3;
+}
+
+#li_b {
+  text-align: center;
+  margin: 70px auto;
+}
+
+#li_w {
+  text-align: center;
+  margin: 70px auto;
+}
+
+#li_c {
+  text-align: center;
+  margin: 70px auto;
+}
+
+#li_f {
+  text-align: center;
+  margin: 70px auto;
+}
+
+#li_t {
+  text-align: center;
+  margin: 70px auto;
+}
+
+#li_i {
+  text-align: center;
+  margin: 70px auto;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+
+  .profile_photo img {
+    float: none;
+    display: block;
+    margin: 10px auto 0 auto;
+  }
+  /* .back {
+    float: none;
+    display: block;
+    margin: -243px auto;
+  } */
+  header {
+    padding: 5px;
+  }
+  .logo {
+    font-size: 14px;
+    padding: 0 100px 0 130px;
+  }
+
+.profile_names {
+  display: block;
+  margin: 7px auto -50px auto;
+  font-size: 8px;
+}
+.about_me {
+  display: block;
+  margin: -65px auto 7px auto;
+  padding: 3px 0;
+}
+
+
+.profile_description {
+  display: block;
+  margin: 0 0 5px 30px;
+  font-size: 10px;
+  line-height: 19px;
+  width: 400px;
+}
+
+.profile_description_en {
+  display: block;
+  margin: 0 30px;
+  font-size: 10px;
+  line-height: 19px;
+  width: 400px;
+}
+h3 {
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  /* 重なり順を一番上に */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.all_btn {
+  display: none;
+}
+
+#li_b {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#li_w {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#li_c {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#li_f {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#li_t {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#li_i {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 70px 0 0;
+}
+
+#drawer-check:checked~.drawer-open span {
+  background: #a7a3a3
+}
+}
